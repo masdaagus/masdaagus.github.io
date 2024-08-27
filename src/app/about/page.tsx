@@ -29,7 +29,7 @@ export default function AboutPage() {
             {/* Information */}
 
             <div className='lg:order-first lg:row-span-2'>
-              <h1 className='mb-12 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl'>I’m Zakiego. I live in South Borneo, where I build the future.</h1>
+              <h1 className='mb-12 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl'>I’m Masda Agus. I live in North Sumatra, where I build the future.</h1>
               <h2 className='mb-10 text-3xl font-semibold'>Who is &apos;Agus&apos;?</h2>
               <p className='mb-7 text-gray-500 text-base font-light'>I am a generalist who enjoys exploring new things and expressing them through writing and tweets.</p>
               <p className='mb-7 text-gray-500 text-base font-light'>I work as a Frontend Engineer on a daily basis, but it doesn&apos;t stop there. I also enjoy working directly with databases and creating APIs, so maybe we can call it Fullstack Engineer?</p>
