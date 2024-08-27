@@ -16,7 +16,7 @@ export default function Home() {
               Mobile Developer, Flutter, based in North Sumatera
             </h1>
             <p className="mt-6 mb-6 text-base font-light text-zinc-600 dark:text-zinc-400">
-              I'm M. Zakiyuddin Munziri, also known as Zakiego, a software engineer based in South Borneo, Indonesia. I specialize in full-stack development, handling everything from front-end and back-end to cloud infrastructure. My toolkit includes TypeScript, Next.js, Nest.js, and more
+              I&apos;m Masda Agus Ruswoko, also known as Agus, a software engineer based in South Borneo, Indonesia. I specialize in full-stack development, handling everything from front-end and back-end to cloud infrastructure. My toolkit includes TypeScript, Next.js, Nest.js, and more
             </p>
 
             <div className="flex gap-4">

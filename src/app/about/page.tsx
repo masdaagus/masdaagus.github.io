@@ -30,9 +30,9 @@ export default function AboutPage() {
 
             <div className='lg:order-first lg:row-span-2'>
               <h1 className='mb-12 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl'>I’m Zakiego. I live in South Borneo, where I build the future.</h1>
-              <h2 className='mb-10 text-3xl font-semibold'>Who is 'Agus'?</h2>
+              <h2 className='mb-10 text-3xl font-semibold'>Who is &apos;Agus&apos;?</h2>
               <p className='mb-7 text-gray-500 text-base font-light'>I am a generalist who enjoys exploring new things and expressing them through writing and tweets.</p>
-              <p className='mb-7 text-gray-500 text-base font-light'>I work as a Frontend Engineer on a daily basis, but it doesn't stop there. I also enjoy working directly with databases and creating APIs, so maybe we can call it Fullstack Engineer?</p>
+              <p className='mb-7 text-gray-500 text-base font-light'>I work as a Frontend Engineer on a daily basis, but it doesn&apos;t stop there. I also enjoy working directly with databases and creating APIs, so maybe we can call it Fullstack Engineer?</p>
               <p className='mb-7 text-gray-500 text-base font-light'>I have been familiar with the world of technology since my middle school days. I started seriously delving into the coding world since late 2020. It began with learning Excel, then continued into the field of data science. However, I eventually found comfort and decided to anchor myself in the world of web development. I write code in TypeScript (JavaScript), Python, R, and Golang.</p>
               <p className='mb-7 text-gray-500 text-base font-light'>Currently (as of 2023), I am still a Sociology student at Lambung Mangkurat University, Banjarmasin, South Kalimantan.</p>
               <p className='mb-12 text-gray-500 text-base font-light'>I value usefulness and I am open to volunteering. I have been contributing to Pusara Digital for Healthcare Workers by LaporCovid-19 since August 2020.</p>
@@ -50,7 +50,7 @@ export default function AboutPage() {
                 <div className='border-l-2 border-gray-300'></div>
                 <p className='text-gray-500 text-base font-light'>
                   <em>
-                    We never know which deeds will lead us to heaven. ... What's certain is never underestimate righteous deeds, no matter how small they may be. Because in the past, a prostitute entered heaven simply by giving water to a thirsty dog. - Ustadz Aan Chandra Talib
+                    We never know which deeds will lead us to heaven. ... What&apos;s certain is never underestimate righteous deeds, no matter how small they may be. Because in the past, a prostitute entered heaven simply by giving water to a thirsty dog. - Ustadz Aan Chandra Talib
                   </em>
                 </p>
               </div>
