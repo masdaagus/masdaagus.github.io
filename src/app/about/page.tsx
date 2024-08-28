@@ -3,11 +3,6 @@ import Link from 'next/link';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 
 export default function AboutPage() {
-  const socialMedia = [
-    { 'title': 'LinkedIn', 'href': '' },
-    { 'title': 'Github', 'href': '' },
-    { 'title': 'Instagram', 'href': '' },
-  ];
 
   return (
     <div className='mx-auto max-w-7xl lg:px-8 bg-white border-x-[1px] border-gray-100 pb-32'>
@@ -18,7 +13,7 @@ export default function AboutPage() {
             <div className='lg:pl-20'>
               <div className='max-w-xs px-2.5 lg:max-w-none'>
                 <Image
-                  src={'/img-profile.jpg'}
+                  src={'/img-profile-2.jpg'}
                   alt=''
                   height={500}
                   width={500}
