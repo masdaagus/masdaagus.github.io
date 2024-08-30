@@ -27,9 +27,9 @@ export default function AboutPage() {
               <h1 className='mb-12 text-4xl font-bold tracking-normal text-zinc-800 sm:text-5xl'>I’m Masda Agus. I live in North Sumatra, where I build the future.</h1>
               <h2 className='mb-10 text-3xl font-semibold'>Who is &apos;Agus&apos;?</h2>
               <p className='mb-7 text-gray-500 text-base font-light'>I am a generalist who enjoys exploring new things and expressing them through writing and tweets.</p>
-              <p className='mb-7 text-gray-500 text-base font-light'>I work as a Mobile Developer on a daily basis, but it doesn't stop there. I also enjoy working directly with Web Developer</p>
+              <p className='mb-7 text-gray-500 text-base font-light'>I work as a Mobile Developer on a daily basis, but it doesn&apos;t stop there. I also enjoy working directly with Web Developer</p>
               <p className='mb-7 text-gray-500 text-base font-light'>I have been familiar with the world of technology since my high school days. I started seriously delving into the coding world since late 2020. It began with learning Python, then continued createing simple calculator. However, I eventually found comfort and decided to anchor myself in the world of mobile development. I write code in Flutter (Dart), Nextjs (TypeScript), Python.</p>
-              <p className='mb-12 text-gray-500 text-base font-light'>I find it incredibly satisfying to create digital experiences that are both functional and enjoyable to use, and I believe that good design can have a positive impact on people's lives.</p>
+              <p className='mb-12 text-gray-500 text-base font-light'>I find it incredibly satisfying to create digital experiences that are both functional and enjoyable to use, and I believe that good design can have a positive impact on people&apos;s lives.</p>
               <h2 className='mb-8 text-3xl font-semibold'>What i Belive In</h2>
               <p className='mb-12 text-gray-500 text-base font-light'>I want to live a life that goes beyond mere existence. I dedicate myself to being beneficial.</p>
               <div className='flex gap-8 mb-8'>
