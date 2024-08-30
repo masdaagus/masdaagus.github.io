@@ -1,7 +1,16 @@
-import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 
 export default function ProjectsPage() {
   return (
-    <div>ProjectsPage</div>
+    <div className='mx-auto max-w-7xl lg:px-8 bg-white border-x-[1px] border-gray-100 pb-32'>
+      <div className='relativ px-4 sm:px-8 lg:px-12 pt-32'>
+        <div className='mx-auto max-w-2xl lg:max-w-5xl '>
+
+        </div>
+      </div>
+    </div>
   )
 }
+

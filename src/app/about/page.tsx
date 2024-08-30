@@ -24,13 +24,12 @@ export default function AboutPage() {
             {/* Information */}
 
             <div className='lg:order-first lg:row-span-2'>
-              <h1 className='mb-12 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl'>I’m Masda Agus. I live in North Sumatra, where I build the future.</h1>
+              <h1 className='mb-12 text-4xl font-bold tracking-normal text-zinc-800 sm:text-5xl'>I’m Masda Agus. I live in North Sumatra, where I build the future.</h1>
               <h2 className='mb-10 text-3xl font-semibold'>Who is &apos;Agus&apos;?</h2>
               <p className='mb-7 text-gray-500 text-base font-light'>I am a generalist who enjoys exploring new things and expressing them through writing and tweets.</p>
-              <p className='mb-7 text-gray-500 text-base font-light'>I work as a Frontend Engineer on a daily basis, but it doesn&apos;t stop there. I also enjoy working directly with databases and creating APIs, so maybe we can call it Fullstack Engineer?</p>
-              <p className='mb-7 text-gray-500 text-base font-light'>I have been familiar with the world of technology since my middle school days. I started seriously delving into the coding world since late 2020. It began with learning Excel, then continued into the field of data science. However, I eventually found comfort and decided to anchor myself in the world of web development. I write code in TypeScript (JavaScript), Python, R, and Golang.</p>
-              <p className='mb-7 text-gray-500 text-base font-light'>Currently (as of 2023), I am still a Sociology student at Lambung Mangkurat University, Banjarmasin, South Kalimantan.</p>
-              <p className='mb-12 text-gray-500 text-base font-light'>I value usefulness and I am open to volunteering. I have been contributing to Pusara Digital for Healthcare Workers by LaporCovid-19 since August 2020.</p>
+              <p className='mb-7 text-gray-500 text-base font-light'>I work as a Mobile Developer on a daily basis, but it doesn't stop there. I also enjoy working directly with Web Developer</p>
+              <p className='mb-7 text-gray-500 text-base font-light'>I have been familiar with the world of technology since my high school days. I started seriously delving into the coding world since late 2020. It began with learning Python, then continued createing simple calculator. However, I eventually found comfort and decided to anchor myself in the world of mobile development. I write code in Flutter (Dart), Nextjs (TypeScript), Python.</p>
+              <p className='mb-12 text-gray-500 text-base font-light'>I find it incredibly satisfying to create digital experiences that are both functional and enjoyable to use, and I believe that good design can have a positive impact on people's lives.</p>
               <h2 className='mb-8 text-3xl font-semibold'>What i Belive In</h2>
               <p className='mb-12 text-gray-500 text-base font-light'>I want to live a life that goes beyond mere existence. I dedicate myself to being beneficial.</p>
               <div className='flex gap-8 mb-8'>
@@ -62,19 +61,19 @@ export default function AboutPage() {
             {/* Social Media */}
             <div className='lg:ml-20 '>
               <div className='space-y-4'>
-                <Link href={''}>
-                  <div className='flex items-center gap-2 mb-3'>
-                    <FaGithub className="h-6 w-6 text-gray-500" />
-                    <p className='text-sm text-gray-500'>Follow on Github</p>
-                  </div>
-                </Link>
-                <Link href={''}>
+                <Link href={'https://www.linkedin.com/in/masda-agus-1393a01b4/'} target="_blank">
                   <div className='flex items-center gap-2 mb-3'>
                     <FaLinkedin className="h-6 w-6 text-gray-500" />
                     <p className='text-sm text-gray-500'>Follow on LinkedIn</p>
                   </div>
                 </Link>
-                <Link href={''}>
+                <Link href={'https://github.com/masdaagus'} target="_blank">
+                  <div className='flex items-center gap-2 mb-3'>
+                    <FaGithub className="h-6 w-6 text-gray-500" />
+                    <p className='text-sm text-gray-500'>Follow on Github</p>
+                  </div>
+                </Link>
+                <Link href={'https://www.instagram.com/masdaagus/'} target="_blank">
                   <div className='flex items-center gap-2 mb-3'>
                     <FaInstagram className="h-6 w-6 text-gray-500" />
                     <p className='text-sm text-gray-500'>Follow on Instagram</p>
