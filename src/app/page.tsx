@@ -1,4 +1,4 @@
-import { Container } from "@/components/container";
+import { Container } from "@/components/container/container";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
@@ -60,6 +60,8 @@ export default function Home() {
           }
         </div>
       </div>
+
+      <div className="h-[3000px]"></div>
 
     </main>
   );

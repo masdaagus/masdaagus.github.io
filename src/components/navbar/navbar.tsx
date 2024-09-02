@@ -10,19 +10,19 @@ export const Navbar = () => {
     const navList = [
         { title: 'About', href: '/about', },
         { title: 'Projects', href: '/projects', },
-        { title: 'Uses', href: '/uses', },
-        { title: 'Read', href: '/read', },
+        // { title: 'Uses', href: '/uses', },
+        // { title: 'Read', href: '/read', },
     ];
 
     const isHome = pathname != '/';
 
     return (
-        <div className='mx-auto max-w-7xl w-full h-20 px-[112px] bg-white'>
+        <div className="mx-auto w-full max-w-7xl fixed top-0 left-0 right-0 py-4 px-4 sm:px-[112px] bg-white z-10 border-x-[1px] border-gray-100">
             <div className={`h-full flex items-center ${!isHome ? 'justify-center' : 'justify-between'}`}>
 
                 {
                     isHome &&
-                    <Link className='hidden sm:block' href={'/'}>
+                    <Link  href={'/'}>
                         <div className="relative h-10 w-10 rounded-full border border-gray-100">
                             <Image className="rounded-full" src={'/img-profile.jpg'} alt="" fill />
                         </div>
@@ -46,7 +46,7 @@ export const Navbar = () => {
                         ))
                     }
                 </div>
-                {isHome && <div className='hidden sm:block'></div>}
+                {isHome && <div className='h-10 w-10'></div>}
             </div>
         </div>
     )
