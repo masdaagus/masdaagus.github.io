@@ -1,7 +1,5 @@
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import Image from 'next/image'
-import Link from 'next/link';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 
 export default function ProjectsPage() {
   return (
@@ -14,6 +12,7 @@ export default function ProjectsPage() {
             {
               projects.map((project, index) => (
                 <BentoGridItem
+                  icon={project.icon}
                   key={index}
                   title={project.title}
                   description={project.description}
@@ -29,9 +28,15 @@ export default function ProjectsPage() {
   )
 }
 
-const Skeleton = () => (
+const Header = () => (
   <div className="relative aspect-video rounded-xl bg-slate-100">
     {/* <Image className="rounded-lg object-cover" src={'/img-profile-2.jpg'} alt="" fill  /> */}
+  </div>
+);
+
+const _Icon = ({ src }: { src: string }) => (
+  <div className="relative h-6 w-6 rounded-md ">
+    <Image className="rounded-lg object-cover" src={src} alt="" fill  />
   </div>
 );
 
@@ -40,27 +45,32 @@ const projects = [
   {
     title: "Monster Pro",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Skeleton />,
+    header: <Header />,
+    icon: <_Icon src='/ic-monster-pro.png' />
   },
   {
     title: "Casso",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Skeleton />,
+    header: <Header />,
+    icon: <_Icon src='/ic-casso.png' />
   },
   {
     title: "Inspection Machine",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Skeleton />,
+    header: <Header />,
+    icon: <_Icon src='/ic-semen-merahputih.webp' />
   },
   {
     title: "Note Encryption",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Skeleton />,
+    header: <Header />,
+    icon: <_Icon src='/ic-note-encryption.png' />
   },
   {
     title: "Cashback Count",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Skeleton />,
+    header: <Header />,
+    icon: <_Icon src='/ic-cashbakck-count.png' />
   },
 
 ]
