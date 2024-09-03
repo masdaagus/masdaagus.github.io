@@ -6,7 +6,7 @@ export default function ProjectsPage() {
     <div className='mx-auto max-w-7xl min-h-screen  lg:px-8 bg-white border-x-[1px] border-gray-100 pb-32'>
       <div className='relativ px-4 sm:px-8 lg:px-12 pt-32'>
         <div className='mx-auto max-w-5xl'>
-          <h1 className='text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl'>Things I've explored.</h1>
+          <h1 className='text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl'>Things I have explored.</h1>
           <p className='mt-6 text-base text-zinc-600 max-w-2xl'>These projects reflect my insatiable curiosity and drive to explore new things. Some projects from my professional engagements cannot be published due to confidentiality reasons.</p>
           <BentoGrid className='mt-6 '>
             {
