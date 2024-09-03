@@ -17,7 +17,7 @@ export const Navbar = () => {
     const isHome = pathname != '/';
 
     return (
-        <div className="mx-auto w-full max-w-7xl fixed top-0 left-0 right-0 py-4 px-4 sm:px-[112px] z-10 border-x-[1px] border-gray-100 bg-white backdrop-filter backdrop-blur-lg bg-opacity-60">
+        <div className="mx-auto w-full max-w-7xl fixed top-0 left-0 right-0 py-4 px-4 md:px-[80px] lg:px-[112px] z-10 border-x-[1px] border-gray-100 bg-white backdrop-filter backdrop-blur-lg bg-opacity-60">
             <div className={`h-full flex items-center ${!isHome ? 'justify-center' : 'justify-between'}`}>
 
                 {

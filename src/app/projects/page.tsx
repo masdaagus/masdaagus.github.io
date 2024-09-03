@@ -17,7 +17,7 @@ export default function ProjectsPage() {
                   title={project.title}
                   description={project.description}
                   header={project.header}
-                  className=''
+                  className='bg-zinc-50 space-y-4'
                 />
               ))
             }
@@ -28,15 +28,17 @@ export default function ProjectsPage() {
   )
 }
 
-const Header = () => (
-  <div className="relative aspect-video rounded-xl bg-slate-100">
-    {/* <Image className="rounded-lg object-cover" src={'/img-profile-2.jpg'} alt="" fill  /> */}
+const Header = ({ src }: { src: string }) => (
+  <div className="relative aspect-video rounded-xl bg-zinc-100">
+    {
+      src.length > 0 && <Image className="rounded-lg object-cover" src={src} alt="" fill />
+    }
   </div>
 );
 
 const _Icon = ({ src }: { src: string }) => (
-  <div className="relative h-6 w-6 rounded-md ">
-    <Image className="rounded-lg object-cover" src={src} alt="" fill  />
+  <div className="relative h-5 w-5 rounded-md ">
+    <Image className="rounded-lg object-cover" src={src} alt="" fill />
   </div>
 );
 
@@ -45,31 +47,31 @@ const projects = [
   {
     title: "Monster Pro",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Header />,
+    header: <Header src={'/img-monster-pro.png'} />,
     icon: <_Icon src='/ic-monster-pro.png' />
   },
   {
     title: "Casso",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Header />,
+    header: <Header src={''} />,
     icon: <_Icon src='/ic-casso.png' />
   },
   {
     title: "Inspection Machine",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Header />,
+    header: <Header src={''} />,
     icon: <_Icon src='/ic-semen-merahputih.webp' />
   },
   {
     title: "Note Encryption",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Header />,
+    header: <Header src={''} />,
     icon: <_Icon src='/ic-note-encryption.png' />
   },
   {
     title: "Cashback Count",
     description: "Explore the birth of groundbreaking ideas and inventions. Explore the birth of groundbreaking ideas and inventions",
-    header: <Header />,
+    header: <Header src={''} />,
     icon: <_Icon src='/ic-cashbakck-count.png' />
   },
 
