@@ -97,7 +97,7 @@ const projects = [
   },
   {
     title: "Cashback Count",
-    description: "Cashback Count is an application to get us the best value posible in the era of cashback war.",
+    description: "Cashback Count is an application to get us the best value posible in the era of cashback war. ",
     header: <Header src={''} />,
     icon: <_Icon src='/ic-cashbakck-count.png' />,
     linkProject: <_LinkProject link='https://github.com/masdaagus/Cashback-count' text='github.cashback-count' />
