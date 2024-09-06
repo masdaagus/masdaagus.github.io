@@ -3,6 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
+
+interface ExperienceProps {
+  companyImage: string
+  companyName?: string
+  companyWebsite?: string
+  companyLocation?: string
+  jobTitle?: string
+  workingTime?: string
+}
+
 export default function Home() {
   const profilePhotos = [
     '/img-profile-4.jpg',
@@ -18,6 +28,7 @@ export default function Home() {
         <Container className="px-4 md:px-[80px] lg:px-[112px]">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:gap-8">
 
+            {/* Container header */}
             <div className="max-w-[550px]">
               <div className="relative mb-6 h-16 w-16 rounded-full border border-gray-100">
                 <Image className="rounded-full" src={'/img-profile.jpg'} alt="" fill />
@@ -42,6 +53,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Container experience */}
             <div className="max-w-[550px] w-full flex flex-col gap-4 mt-4 p-6 rounded-2xl border border-zinc-100">
               <div className="flex items-center gap-2 my-2">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" className="h-6 w-6 flex-none"> <path d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z" className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"></path><path d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5" className="stroke-zinc-400 dark:stroke-zinc-500"></path></svg>
@@ -53,6 +65,7 @@ export default function Home() {
                     key={i}
                     companyImage={data.companyImage}
                     companyName={data.companyName}
+                    companyWebsite={data.companyWebsite}
                     companyLocation={data.companyLocation}
                     jobTitle={data.jobTitle}
                     workingTime={data.workingTime}
@@ -101,14 +114,8 @@ const ExperienceItem = ({
   companyLocation,
   jobTitle,
   workingTime,
-}: {
-  companyImage: string
-  companyName?: string
-  companyLocation?: string
-  jobTitle?: string
-  workingTime?: string
-
-}) => (
+  companyWebsite,
+}: ExperienceProps) => (
   <div className="flex gap-4">
     <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">
       <div className="relative h-8 w-8 flex rounded-full">
@@ -117,7 +124,15 @@ const ExperienceItem = ({
     </div>
 
     <div className="w-full flex flex-col gap-1">
-      <p className="text-sm font-medium text-zinc-900">{companyName}</p>
+      <a href={companyWebsite}>
+        <p
+          className={`text-sm font-medium text-zinc-900 ${companyWebsite && 'hover:underline underline-offset-4'}`}>{companyName}
+          {
+            companyWebsite  && <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5 ml-1 !no-underline h-4 w-4 inline"><title>External Link</title><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clip-rule="evenodd"></path></svg></span>
+          }
+        </p>
+
+      </a>
       <p className="text-xs font-light  text-zinc-400">{companyLocation}</p>
       <div className="flex items-center justify-between">
         <p className="text-xs font-light  text-zinc-500">{jobTitle}</p>
@@ -132,6 +147,7 @@ const experiences = [
   {
     "companyImage": '/ic-tog.jpg',
     "companyName": 'PT. Triple One Group',
+    "companyWebsite": 'https://tog.co.id/',
     "companyLocation": 'Surabaya, Indonesia',
     "jobTitle": 'Mobile Developer',
     "workingTime": 'Aug 2022 — Present',
@@ -146,6 +162,7 @@ const experiences = [
   {
     "companyImage": '/ic-semen-merahputih.webp',
     "companyName": 'PT. Cemindo Gemilang',
+    "companyWebsite": 'https://www.cemindo.com/en',
     "companyLocation": 'Medan, Indonesia',
     "jobTitle": 'Patroller / IT Support',
     "workingTime": 'Aug 2018 — 2022',
