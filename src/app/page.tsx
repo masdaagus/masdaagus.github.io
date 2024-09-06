@@ -148,6 +148,6 @@ const experiences = [
     "companyName": 'PT. Cemindo Gemilang',
     "companyLocation": 'Medan, Indonesia',
     "jobTitle": 'Patroller / IT Support',
-    "workingTime": 'Aug 2018 — 2022',
+    "workingTime": 'Aug 2018 — Mar 2022',
   },
 ]
