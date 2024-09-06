@@ -39,8 +39,8 @@ const Header = ({ src }: { src: string }) => (
 );
 
 const _Icon = ({ src }: { src: string }) => (
-  <div className="relative h-5 w-5 rounded-md ">
-    <Image className="rounded-lg object-cover" src={src} alt="" fill />
+  <div className="relative h-7 w-7">
+    <Image className="object-cover" src={src} alt="" fill />
   </div>
 );
 
