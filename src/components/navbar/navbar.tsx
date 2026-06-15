@@ -1,53 +1,65 @@
 'use client'
-import Link from 'next/link';
-import Image from "next/image";
-import { usePathname } from 'next/navigation';
+import { useState } from "react";
+import Link from "next/link";
 
-export const Navbar = () => {
+const navItems = ["Skills", "Experience", "Projects", "About", "Contact"];
 
-    const pathname = usePathname()
+export function Navbar() {
+  const [open, setOpen] = useState(false);
 
-    const navList = [
-        { title: 'About', href: '/about', },
-        { title: 'Projects', href: '/projects', },
-        // { title: 'Uses', href: '/uses', },
-        // { title: 'Read', href: '/read', },
-    ];
+  return (
+    <nav className="sticky top-0 z-50 bg-[#fafaf8]/92 backdrop-blur-md border-b border-zinc-200">
+      <div className="mx-auto max-w-3xl px-6 flex items-center justify-between h-[52px]">
+        <Link href="/" className="font-serif text-[17px] text-[#111110] no-underline tracking-tight">
+          Masda Agus
+        </Link>
 
-    const isHome = pathname != '/';
+        {/* Desktop nav */}
+        <ul className="hidden sm:flex gap-7 list-none">
+          {navItems.map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item.toLowerCase()}`}
+                className="text-[13px] text-zinc-500 no-underline tracking-wide hover:text-[#111110] transition-colors duration-150"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-    return (
-        <div className="mx-auto w-full max-w-7xl fixed top-0 left-0 right-0 py-4 px-4 md:px-[80px] lg:px-[112px] z-10 border-x-[1px] border-gray-100 bg-white backdrop-filter backdrop-blur-lg bg-opacity-60">
-            <div className={`h-full flex items-center ${!isHome ? 'justify-center' : 'justify-between'}`}>
+        {/* Hamburger */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="sm:hidden flex flex-col gap-[4px] p-2 bg-transparent border-none cursor-pointer"
+          aria-label="Toggle menu"
+        >
+          <span className={`block h-[1.5px] w-5 bg-zinc-500 transition-transform duration-200 ${open ? "rotate-45 translate-y-[5.5px]" : ""}`} />
+          <span className={`block h-[1.5px] w-5 bg-zinc-500 transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
+          <span className={`block h-[1.5px] w-5 bg-zinc-500 transition-transform duration-200 ${open ? "-rotate-45 -translate-y-[5.5px]" : ""}`} />
+        </button>
+      </div>
 
-                {
-                    isHome &&
-                    <Link  href={'/'}>
-                        <div className="relative h-10 w-10 rounded-full border border-gray-100">
-                            <Image className="rounded-full" src={'/img-profile.jpg'} alt="" fill />
-                        </div>
-                    </Link>
-                }
-
-                <div className='flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10'>
-                    {
-                        navList.map((data) => (
-                            <Link
-                                key={data.title}
-                                href={data.href}>
-                                <div>
-                                    <p className='relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400'>{data.title}</p>
-                                    {
-                                        pathname == data.href.toLowerCase() &&
-                                        <div className='mx-2 h-[1px] rounded-full bg-teal-500'></div>
-                                    }
-                                </div>
-                            </Link>
-                        ))
-                    }
-                </div>
-                {isHome && <div className='h-10 w-10'></div>}
-            </div>
-        </div>
-    )
+      {/* Mobile menu */}
+      <div
+        className={`sm:hidden overflow-hidden transition-all duration-200 ${
+          open ? "max-h-[300px] border-t border-zinc-200" : "max-h-0"
+        }`}
+      >
+        <ul className="flex flex-col px-6 py-4 gap-4 list-none bg-[#fafaf8]">
+          {navItems.map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setOpen(false)}
+                className="text-[14px] text-zinc-500 no-underline hover:text-[#111110] transition-colors duration-150"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
 }
