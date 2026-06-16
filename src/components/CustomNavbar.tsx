@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const navItems = ["Skills", "Experience", "Projects", "About", "Contact"];
 
-export function Navbar() {
+export function CustomNavbar() {
   const [open, setOpen] = useState(false);
 
   return (

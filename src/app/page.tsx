@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar/Navbar";
+import { CustomNavbar } from "@/components/CustomNavbar";
 import Image from "next/image";
 import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 
@@ -6,7 +6,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 export default function TestPage() {
   return (
     <div className="min-h-screen bg-[#fafaf8] text-[#111110] font-sans">
-      <Navbar />
+      <CustomNavbar />
 
       {/* HERO */}
       <div className="mx-auto max-w-3xl px-6">
