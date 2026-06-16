@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar/Navbar";
+import { Navbar } from "@/components/Navbar/Navbar";
 import Image from "next/image";
 import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 
