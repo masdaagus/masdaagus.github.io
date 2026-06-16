@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masda Agus — Mobile & Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #111110;
+      --ink-2: #4a4a47;
+      --ink-3: #8a8a86;
+      --ink-4: #c4c4bf;
+      --paper: #fafaf8;
+      --paper-2: #f2f2ee;
+      --rule: #e4e4df;
+      --accent: #111110;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 52px;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--ink-2);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero { padding: 80px 0 72px; border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 20px;
+    }
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .hero-name em { font-style: italic; color: var(--ink-2); }
+    .hero-bio {
+      font-size: 16px;
+      color: var(--ink-2);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+    .tag {
+      font-size: 12px;
+      padding: 4px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 99px;
+      color: var(--ink-2);
+      background: var(--paper-2);
+    }
+    .tag.highlight {
+      border-color: var(--ink);
+      color: var(--ink);
+      background: transparent;
+    }
+    .hero-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px;
+      font-family: var(--font-sans);
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .btn-primary:hover { background: #333330; }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--rule);
+    }
+    .btn-outline:hover { border-color: var(--ink-3); background: var(--paper-2); }
+    .hero-socials { display: flex; gap: 18px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--rule); }
+    .hero-socials a {
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--ink-3);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .hero-socials a:hover { color: var(--ink); }
+
+    /* ── SECTIONS ── */
+    section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+    section:last-child { border-bottom: none; }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-4);
+      margin-bottom: 32px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .skill-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .skill-row:nth-child(odd) { padding-right: 32px; border-right: 1px solid var(--rule); }
+    .skill-row:nth-child(even) { padding-left: 32px; }
+    .skill-cat {
+      font-size: 12px;
+      color: var(--ink-3);
+      min-width: 96px;
+      flex-shrink: 0;
+    }
+    .skill-items { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+    .skill-highlight { color: var(--ink); font-weight: 500; }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 28px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-period { font-size: 12px; color: var(--ink-3); padding-top: 2px; line-height: 1.5; }
+    .exp-company {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .exp-role { font-size: 13px; color: var(--ink-3); margin-bottom: 10px; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .exp-bullets li {
+      font-size: 13px;
+      color: var(--ink-2);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ink-4);
+      font-size: 11px;
+      top: 2px;
+    }
+    .exp-achievement {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-top: 8px;
+    }
+    .exp-achievement::before { content: '↑'; font-size: 11px; }
+
+    /* ── PROJECTS ── */
+    .projects-list { display: flex; flex-direction: column; gap: 0; }
+    .project-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+    .project-item:last-child { border-bottom: none; }
+    .project-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .project-desc { font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-bottom: 10px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      color: var(--ink-3);
+    }
+    .project-links { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+    .project-link {
+      font-size: 12px;
+      color: var(--ink-3);
+      text-decoration: none;
+      border: 1px solid var(--rule);
+      padding: 4px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .project-link:hover { color: var(--ink); border-color: var(--ink-3); }
+    .project-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--paper-2);
+      color: var(--ink-3);
+      border: 1px solid var(--rule);
+      white-space: nowrap;
+      align-self: flex-start;
+    }
+
+    /* ── ABOUT ── */
+    .about-body { max-width: 560px; }
+    .about-body p {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-quote {
+      border-left: 2px solid var(--rule);
+      padding: 4px 0 4px 20px;
+      margin: 28px 0;
+    }
+    .about-quote p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--ink-2);
+      margin-bottom: 8px !important;
+    }
+    .about-quote cite {
+      font-size: 12px;
+      color: var(--ink-4);
+      font-style: normal;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+    .contact-item {
+      background: var(--paper);
+      padding: 20px 24px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.15s;
+    }
+    .contact-item:hover { background: var(--paper-2); }
+    .contact-item-label { font-size: 11px; color: var(--ink-4); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+    .contact-item-val { font-size: 14px; color: var(--ink); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--rule);
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-note { font-size: 12px; color: var(--ink-4); }
+    .footer-avail {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--ink-2);
+    }
+    .avail-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #3B6D11;
+      flex-shrink: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-row:nth-child(odd) { padding-right: 0; border-right: none; }
+      .skill-row:nth-child(even) { padding-left: 0; }
+      .exp-item { grid-template-columns: 1fr; gap: 4px; }
+      .exp-period { margin-bottom: 4px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .project-item { grid-template-columns: 1fr; }
+      .project-links { flex-direction: row; align-items: flex-start; }
+      footer .container { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-logo">Masda Agus</a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="container">
+  <header class="hero">
+    <p class="hero-eyebrow">Mobile &amp; Frontend Developer · Surabaya, Indonesia</p>
+    <h1 class="hero-name">
+      Building mobile apps<br>
+      <em>that people actually use.</em>
+    </h1>
+    <p class="hero-bio">
+      I'm Masda Agus Ruswoko — 4+ years crafting Flutter apps for Android &amp; iOS at PT. Triple One Global. I also work across the stack with React and Next.js, and I believe good software is as much about the experience as the code behind it.
+    </p>
+    <div class="hero-tags">
+      <span class="tag highlight">Open to full-time opportunities</span>
+      <span class="tag">Flutter</span>
+      <span class="tag">React</span>
+      <span class="tag">Next.js</span>
+      <span class="tag">CI/CD</span>
+      <span class="tag">Surabaya · Remote OK</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <a href="https://www.linkedin.com/in/masda-agus-1393a01b4/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://github.com/masdaagus" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/masda-agus-1393a01b4/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/masdaagus/" target="_blank">Instagram</a>
+      <a href="mailto:masdaagusruswoko@gmail.com">masdaagusruswoko@gmail.com</a>
+    </div>
+  </header>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Technical Skills</p>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-cat">Mobile</span>
+        <span class="skill-items"><span class="skill-highlight">Flutter</span>, Kotlin, Dart</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">State Mgmt</span>
+        <span class="skill-items"><span class="skill-highlight">BLoC</span>, Provider, GetX</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Frontend</span>
+        <span class="skill-items"><span class="skill-highlight">React</span>, Next.js, TypeScript, TailwindCSS</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">DevOps</span>
+        <span class="skill-items"><span class="skill-highlight">Fastlane</span>, Jenkins, CI/CD, Git</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Services</span>
+        <span class="skill-items">Firebase FCM, RESTful APIs, Postman</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Tools</span>
+        <span class="skill-items">Figma, JIRA, Android Studio, Xcode</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-period">Aug 2022 — Present</div>
+        <div>
+          <p class="exp-company">PT. Triple One Global</p>
+          <p class="exp-role">Mobile Developer · Surabaya, Indonesia</p>
+          <ul class="exp-bullets">
+            <li>Design and develop cross-platform mobile apps using Flutter for Android &amp; iOS</li>
+            <li>Collaborate with designers and backend engineers in a cross-functional team</li>
+            <li>Optimize app performance through state management with BLoC, Provider, and GetX</li>
+            <li>Conduct code reviews and maintain high code quality standards</li>
+            <li>Deploy apps to App Store and Google Play Store</li>
+            <li>Utilize Git for version control, collaborating via GitLab/GitHub</li>
+          </ul>
+          <div class="exp-achievement">CI/CD with Fastlane — release cycles reduced by 60%</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Aug 2020 — Present</div>
+        <div>
+          <p class="exp-company">Freelance</p>
+          <p class="exp-role">Mobile Developer · Medan, Indonesia</p>
+          <ul class="exp-bullets">
+            <li>Built mobile applications for independent clients across various industries</li>
+            <li>Handled full project lifecycle from design to deployment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Sep 2018 — Aug 2022</div>
+        <div>
+          <p class="exp-company">PT. Cemindo Gemilang</p>
+          <p class="exp-role">Mobile Developer &amp; IT Support · Medan, Indonesia</p>
+          <ul class="exp-bullets">
+            <li>Designed and developed mobile apps using Flutter for Android</li>
+            <li>Implemented push notification features using Firebase Cloud Messaging (FCM)</li>
+            <li>Collaborated with IT team to implement system upgrades, updates, and patches</li>
+            <li>Installed, configured, and maintained IT infrastructure including desktops, laptops, and peripherals</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <p style="font-size:13px;color:var(--ink-3);margin-bottom:32px;max-width:480px;">
+      A selection of work I can share — some professional projects remain confidential by agreement.
+    </p>
+    <div class="projects-list">
+
+      <div class="project-item">
+        <div>
+          <p class="project-name">Monster Pro</p>
+          <p class="project-desc">A property super-app actively collaborating with property industry players — developers, service vendors, offices, and agents — under the auspices of AREBI.</p>
+          <div class="project-tags">
+            <span class="project-tag">Flutter</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">iOS</span>
+            <span class="project-tag">CI/CD</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://apps.apple.com/us/app/monster-pro/id6450938268" target="_blank" class="project-link">App Store ↗</a>
+          <a href="https://play.google.com/store/apps/details?id=id.monsterpro.apps&hl=en" target="_blank" class="project-link">Play Store ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <p class="project-name">Casso</p>
+          <p class="project-desc">A restaurant app that streamlines the order-to-payment workflow and generates operational reports — improving service quality and dining experience.</p>
+          <div class="project-tags">
+            <span class="project-tag">Flutter</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">POS System</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/masdaagus/Casso" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <p class="project-name">Inspection Machine</p>
+          <p class="project-desc">A mobile inspection tool built for industrial use, enabling field teams to log, track, and report machine inspections efficiently.</p>
+          <div class="project-tags">
+            <span class="project-tag">Flutter</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">Industrial</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/masdaagus/Inspection-App" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <p class="project-name">Note Encryption</p>
+          <p class="project-desc">A secure note-taking app with end-to-end encryption using DES and RSA algorithms — combining utility with cryptographic safety.</p>
+          <div class="project-tags">
+            <span class="project-tag">Flutter</span>
+            <span class="project-tag">Cryptography</span>
+            <span class="project-tag">DES</span>
+            <span class="project-tag">RSA</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/masdaagus/Note-Encryption-App" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <p class="project-name">Cashback Count</p>
+          <p class="project-desc">A utility app that helps users calculate and compare cashback deals, finding the best value in an increasingly cashback-heavy market.</p>
+          <div class="project-tags">
+            <span class="project-tag">Flutter</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">Utility</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/masdaagus/Cashback-count" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <p class="project-name">Fullstack Project</p>
+          <p class="project-desc">Currently in development — a fullstack web application exploring React, Next.js, and backend integration. Details coming soon.</p>
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">TypeScript</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <span class="project-badge">In Development</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <div class="about-body">
+      <p>
+        I'm a Mobile Developer with 4+ years of experience building Flutter applications for Android and iOS. Currently based in Surabaya, I'm open to full-time opportunities in mobile or fullstack development (React/Next.js). I have a track record of optimizing app performance and implementing CI/CD pipelines that meaningfully cut release cycles.
+      </p>
+      <p>
+        But my path here wasn't straightforward — and I think that's worth telling.
+      </p>
+      <p>
+        Back in 2019, I was working as a factory patroller at PT. Cemindo Gemilang. One day, I got talking with my supervisor — a genuinely sharp person, calm and methodical. I noticed that despite being clearly intelligent, he had taken longer than most to finish his degree. I asked him why.
+      </p>
+      <div class="about-quote">
+        <p>"Because I didn't have a skill worth selling yet. So there was no rush to graduate. We should work based on our skills — not on who we know. That's the only way to be truly valued."</p>
+        <cite>— My supervisor at PT. Cemindo Gemilang, 2019</cite>
+      </div>
+      <p>
+        That answer hit differently. I had no higher education background. If I couldn't rely on credentials or connections, the only thing I could build was skill. So I started teaching myself how to code — from scratch, on my own time, alongside a full-time job.
+      </p>
+      <p>
+        When it came to choosing a direction, I chose Mobile Development. My reasoning was simple: everyone has a smartphone, and the demand for good apps was only going to grow. That bet has paid off in ways I didn't expect.
+      </p>
+      <p>
+        I've since shipped apps to the App Store and Play Store, built CI/CD pipelines that cut release cycles by 60%, and expanded into frontend web with React and Next.js. I'm still self-driven, still curious, and still learning — now exploring fullstack development as my next chapter.
+      </p>
+      <p style="font-size:14px;color:var(--ink-3);">
+        I believe good design has a real impact on people's lives — not just how things look, but how they work. That belief is what drives me to keep building.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <p style="font-size:15px;color:var(--ink-2);max-width:440px;margin-bottom:28px;line-height:1.7;">
+      Currently open to full-time roles in Mobile or Fullstack Development. Feel free to reach out — I respond to every message.
+    </p>
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:masdaagusruswoko@gmail.com">
+        <p class="contact-item-label">Email</p>
+        <p class="contact-item-val">masdaagusruswoko@gmail.com</p>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/masda-agus-1393a01b4/" target="_blank">
+        <p class="contact-item-label">LinkedIn</p>
+        <p class="contact-item-val">masda-agus-1393a01b4</p>
+      </a>
+      <a class="contact-item" href="https://github.com/masdaagus" target="_blank">
+        <p class="contact-item-label">GitHub</p>
+        <p class="contact-item-val">masdaagus</p>
+      </a>
+      <a class="contact-item" href="tel:+6281260741178">
+        <p class="contact-item-label">Phone / WhatsApp</p>
+        <p class="contact-item-val">+62 812 6074 1178</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-note">© 2025 Masda Agus Ruswoko</p>
+    <div class="footer-avail">
+      <span class="avail-dot"></span>
+      Open to opportunities · Surabaya, Indonesia
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
