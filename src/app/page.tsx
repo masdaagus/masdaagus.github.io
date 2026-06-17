@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 
 
-export default function TestPage() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-[#fafaf8]  text-[#111110] font-sans">
       <CustomNavbar />
@@ -23,7 +23,7 @@ export default function TestPage() {
               <p className="font-serif text-[clamp(32px,6vw,42px)] md:text-[clamp(36px,6vw,45px)] leading-[1.08] tracking-[-0.02em] mb-6 italic text-zinc-500">that people actually use.</p>
               <p className="text-[16px] text-zinc-500 leading-relaxed max-w-[520px] mb-8">
                 I&apos;m Masda Agus Ruswoko — 4+ years crafting Flutter apps for Android &amp; iOS at PT. Triple One Global.
-                I also work across the stack with React and Next.js, an d I believe good software is as much about the
+                I also work across the stack with React, Next.js and Svelte, an d I believe good software is as much about the
                 experience as the code behind it.
               </p>
               <div className="flex flex-wrap gap-2 mb-9">
@@ -89,9 +89,8 @@ export default function TestPage() {
             {skills.map((skill, i) => (
               <div
                 key={skill.cat}
-                className={`flex items-baseline gap-4 py-[14px] border-b border-zinc-200 ${
-                  i % 2 === 0 ? "sm:pr-8 sm:border-r sm:border-zinc-200" : "sm:pl-8"
-                }`}
+                className={`flex items-baseline gap-4 py-[14px] border-b border-zinc-200 ${i % 2 === 0 ? "sm:pr-8 sm:border-r sm:border-zinc-200" : "sm:pl-8"
+                  }`}
               >
                 <span className="text-[12px] text-zinc-400 min-w-[96px] flex-shrink-0">{skill.cat}</span>
                 <span className="text-[13px] text-zinc-500 leading-relaxed">
@@ -146,9 +145,10 @@ export default function TestPage() {
             A selection of work I can share — some professional projects remain confidential by agreement.
           </p>
           <div className="flex flex-col">
-            {projects.map((project) => (
-              <div key={project.name} className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 py-6 border-b border-zinc-200 items-start last:border-b-0">
+            {projects.map((project, i) => (
+              <div key={project.name} className={`grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 py-6 border-b border-zinc-200 items-start last:border-b-0 ${i === 0 ? "bg-[#fafaf8] shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-zinc-300 rounded-lg p-5" : ""}`}>
                 <div>
+                  {i === 0 && <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded bg-[#111110] text-[#fafaf8] mb-2 uppercase">★ flagship</span>}
                   <p className="text-[15px] font-medium text-[#111110] mb-1">{project.name}</p>
                   <p className="text-[13px] text-zinc-500 leading-relaxed mb-2.5">{project.desc}</p>
                   <div className="flex flex-wrap gap-1.5">
@@ -242,7 +242,7 @@ export default function TestPage() {
             every message.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 border border-zinc-200 rounded-lg overflow-hidden">
-            <a href="mailto:masdaagusruswoko@gmail.com" className="bg-[#fafaf8] px-6 py-5 no-underline hover:bg-[#f2f2ee] transition-colors duration-150 border-b border-zinc-200 sm:border-b-0 sm:border-r border-zinc-200">
+            <a href="mailto:masdaagusruswoko@gmail.com" className="bg-[#fafaf8] px-6 py-5 no-underline hover:bg-[#f2f2ee] transition-colors duration-150 border-b border-zinc-200 sm:border-b-0 sm:border-r">
               <p className="text-[11px] tracking-[0.08em] uppercase text-zinc-300 mb-1">Email</p>
               <p className="text-[14px] text-[#111110]">masdaagusruswoko@gmail.com</p>
             </a>
@@ -254,7 +254,7 @@ export default function TestPage() {
               <p className="text-[11px] tracking-[0.08em] uppercase text-zinc-300 mb-1">GitHub</p>
               <p className="text-[14px] text-[#111110]">masdaagus</p>
             </a>
-            <a href="tel:+6281260741178" className="bg-[#fafaf8] px-6 py-5 no-underline hover:bg-[#f2f2ee] transition-colors duration-150 border-t sm:border-t-0 sm:border-l border-zinc-200">
+            <a href="https://api.whatsapp.com/send/?phone=6281260741178&text&type=phone_number&app_absent=0" className="bg-[#fafaf8] px-6 py-5 no-underline hover:bg-[#f2f2ee] transition-colors duration-150 border-t sm:border-t-0 sm:border-l border-zinc-200">
               <p className="text-[11px] tracking-[0.08em] uppercase text-zinc-300 mb-1">Phone / WhatsApp</p>
               <p className="text-[14px] text-[#111110]">+62 812 6074 1178</p>
             </a>
@@ -277,12 +277,12 @@ export default function TestPage() {
 }
 
 const skills = [
-  { cat: "Mobile", items: [{ name: "Flutter", highlight: true }, { name: "Kotlin" }, { name: "Dart" }] },
-  { cat: "State Mgmt", items: [{ name: "BLoC", highlight: true }, { name: "Provider" }, { name: "GetX" }] },
-  { cat: "Frontend", items: [{ name: "React", highlight: true }, { name: "Next.js" }, { name: "TypeScript" }, { name: "TailwindCSS" }] },
-  { cat: "DevOps", items: [{ name: "Fastlane", highlight: true }, { name: "Jenkins" }, { name: "CI/CD" }, { name: "Git" }] },
-  { cat: "Services", items: [{ name: "Firebase FCM" }, { name: "RESTful APIs" }, { name: "Postman" }] },
-  { cat: "Tools", items: [{ name: "Figma" }, { name: "JIRA" }, { name: "Android Studio" }, { name: "Xcode" }] },
+  { cat: "Mobile", items: [{ name: "Flutter", highlight: true }, { name: "Dart" }, { name: "Kotlin" }] },
+  { cat: "State Mgmt", items: [{ name: "BLoC", highlight: true }, { name: "GetX" }, { name: "Provider" }] },
+  { cat: "Frontend", items: [{ name: "React", highlight: true }, { name: "Next.js" }, { name: "TypeScript" }, { name: "TailwindCSS" }, { name: "Svelte" }] },
+  { cat: "DevOps", items: [{ name: "Fastlane", highlight: true }, { name: "CI/CD" }, { name: "Git" }] },
+  { cat: "Services", items: [{ name: "Firebase FCM" }, { name: "MQTT" }, { name: "Web Socket" }, { name: "RESTful APIs" }, { name: "Postman" }] },
+  { cat: "Tools", items: [{ name: "Vscode", highlight: true }, { name: "Android Studio" }, { name: "Xcode" }, { name: "Claude", highlight: true }, { name: "Opencode" }, { name: "Figma" },] },
 ];
 
 const experiences = [
@@ -301,15 +301,6 @@ const experiences = [
     achievement: "CI/CD with Fastlane — release cycles reduced by 60%",
   },
   {
-    period: "Aug 2020 — Present",
-    company: "Freelance",
-    role: "Mobile Developer · Medan, Indonesia",
-    bullets: [
-      "Built mobile applications for independent clients across various industries",
-      "Handled full project lifecycle from design to deployment",
-    ],
-  },
-  {
     period: "Sep 2018 — Aug 2022",
     company: "PT. Cemindo Gemilang",
     role: "Mobile Developer & IT Support · Medan, Indonesia",
@@ -326,7 +317,7 @@ const projects = [
   {
     name: "Monster Pro",
     desc: "A property super-app actively collaborating with property industry players — developers, service vendors, offices, and agents — under the auspices of AREBI.",
-    tags: ["Flutter", "Android", "iOS", "CI/CD"],
+    tags: ["Flutter", "Android", "iOS", "CI/CD", "Flavor", "Fastline", "MQTT", "Clean Architecture"],
     links: [
       { label: "App Store", href: "https://apps.apple.com/us/app/monster-pro/id6450938268" },
       { label: "Play Store", href: "https://play.google.com/store/apps/details?id=id.monsterpro.apps&hl=en" },
