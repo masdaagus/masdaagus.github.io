@@ -167,7 +167,7 @@ export default function TestPage() {
                       target="_blank"
                       className="text-[12px] text-zinc-400 no-underline border border-zinc-200 px-2.5 py-1 rounded whitespace-nowrap hover:text-[#111110] hover:border-zinc-400 transition-all duration-150"
                     >
-                      {link.label} &nearr;
+                      {link.label};
                     </a>
                   ))}
                   {project.badge && (
