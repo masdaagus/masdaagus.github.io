@@ -5,7 +5,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 
 export default function TestPage() {
   return (
-    <div className="min-h-screen bg-[#fafaf8] text-[#111110] font-sans">
+    <div className="min-h-screen bg-[#fafaf8]  text-[#111110] font-sans">
       <CustomNavbar />
 
       {/* HERO */}
@@ -17,10 +17,10 @@ export default function TestPage() {
               <p className="text-[12px] tracking-[0.12em] uppercase text-zinc-400 mb-5">
                 Mobile &amp; Frontend Developer &middot; Surabaya, Indonesia
               </p>
-              <h1 className="font-serif text-[clamp(36px,6vw,52px)] leading-[1.08] tracking-[-0.02em] text-[#111110] mb-5">
-                Building mobile apps<br />
-                <em className="italic text-zinc-500">that people actually use.</em>
+              <h1 className="font-serif text-[clamp(36px,6vw,52px)] leading-[1.08] tracking-[-0.02em] text-[#111110]">
+                Building mobile apps
               </h1>
+              <p className="font-serif text-[clamp(32px,6vw,42px)] md:text-[clamp(36px,6vw,45px)] leading-[1.08] tracking-[-0.02em] mb-6 italic text-zinc-500">that people actually use.</p>
               <p className="text-[16px] text-zinc-500 leading-relaxed max-w-[520px] mb-8">
                 I&apos;m Masda Agus Ruswoko — 4+ years crafting Flutter apps for Android &amp; iOS at PT. Triple One Global.
                 I also work across the stack with React and Next.js, an d I believe good software is as much about the
@@ -167,7 +167,7 @@ export default function TestPage() {
                       target="_blank"
                       className="text-[12px] text-zinc-400 no-underline border border-zinc-200 px-2.5 py-1 rounded whitespace-nowrap hover:text-[#111110] hover:border-zinc-400 transition-all duration-150"
                     >
-                      {link.label};
+                      {link.label}
                     </a>
                   ))}
                   {project.badge && (
@@ -263,7 +263,7 @@ export default function TestPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-zinc-200 py-8">
+      <footer className="border-t border-zinc-200 py-8 mt-16 mb-6">
         <div className="mx-auto max-w-3xl px-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-[12px] text-zinc-300">&copy; 2025 Masda Agus Ruswoko</p>
           <div className="flex items-center gap-2 text-[12px] text-zinc-500">
